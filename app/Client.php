@@ -2,9 +2,11 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class Client extends Model
+class Client extends Eloquent
 {
-    //
+    protected $fillable = [
+        'name', 'address'
+    ];
 }
