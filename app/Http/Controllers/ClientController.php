@@ -36,9 +36,19 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
+        $clientValidate = request()->validate([
+            'name' => 'required',
+            'address' => 'required',
+            'clientPh' => 'required',
+            'rate' => 'required',
+            'qty' => 'required'
+            ]);
         $client = new Client;
         $client->name = $request->input('name');
         $client->address = $request->input('address');
+        $client->clientPh = $request->input('clientPh');
+        $client->rate = $request->input('rate');
+        $client->qty = $request->input('qty');
         $client->save();
         return redirect('client');
     }
@@ -80,6 +90,9 @@ class ClientController extends Controller
         $client = Client::find($id);
         $client->name = $request->input('name');
         $client->address = $request->input('address');
+        $client->clientPh = $request->input('clientPh');
+        $client->rate = $request->input('rate');
+        $client->qty = $request->input('qty');
         $client->save();
         return redirect('client');
     }
