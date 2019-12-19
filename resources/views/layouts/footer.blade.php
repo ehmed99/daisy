@@ -1,8 +1,41 @@
-    <!-- end of cards -->
-   
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script src="{{ asset('/js/script.js') }}"></script>
-  </body>
+            <footer class="footer text-center text-sm-left">
+               <div class="boxed-footer">
+                    &copy; 2019 Copyright. All Rights Reserved <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by <strong>OneDiv</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+               </div>
+            </footer><!--end footer-->
+
+            </div>
+        <!-- end page-wrapper -->
+        
+
+        <!-- jQuery  -->
+        <script src="{{ asset('/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('/js/metisMenu.min.js') }}"></script>
+        <script src="{{ asset('/js/waves.min.js') }}"></script>
+        <script src="{{ asset('/js/jquery.slimscroll.min.js') }}"></script>
+       
+        <!-- Required datatable js -->
+        <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+        <script src="{{ asset('/plugins/peity-chart/jquery.peity.min.js') }}"></script>
+        <script src="{{ asset('/plugins/moment/moment.js') }}"></script>
+        <script src="{{ asset('/plugins/apexcharts/apexcharts.min.js') }}"></script>
+        <script src="{{ asset('/plugins/apexcharts/irregular-data-series.js') }}"></script>
+        <script src="{{ asset('/plugins/apexcharts/ohlc.js') }}"></script>
+        <script src="{{ asset('/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
+        <script src="{{ asset('/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
+        <script src="{{ asset('/plugins/parsleyjs/parsley.min.js') }}"></script>
+
+        <script src="{{ asset('/pages/jquery.validation.init.js') }}"></script>
+        <script src="{{ asset('/pages/jquery.ana_customers.inity.js') }}"></script>
+        <script src="{{ asset('/pages/jquery.eco_dashboard.init.js') }}"></script>
+        
+
+        <script src="{{ asset('/js/jquery.core.js') }}"></script>
+
+        <!-- App js -->
+        <script src="{{ asset('/js/app.js') }}"></script>
+       
+    </body>
 </html>

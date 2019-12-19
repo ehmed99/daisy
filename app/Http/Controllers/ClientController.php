@@ -41,7 +41,8 @@ class ClientController extends Controller
             'address' => 'required',
             'clientPh' => 'required',
             'rate' => 'required',
-            'qty' => 'required'
+            'qty' => 'required',
+            'product'=> 'required'
             ]);
         $client = new Client;
         $client->name = $request->input('name');
@@ -49,6 +50,7 @@ class ClientController extends Controller
         $client->clientPh = $request->input('clientPh');
         $client->rate = $request->input('rate');
         $client->qty = $request->input('qty');
+        $client->product = $request->input('product');
         $client->save();
         return redirect('client');
     }
@@ -93,6 +95,7 @@ class ClientController extends Controller
         $client->clientPh = $request->input('clientPh');
         $client->rate = $request->input('rate');
         $client->qty = $request->input('qty');
+        $client->product = $request->input('product');
         $client->save();
         return redirect('client');
     }

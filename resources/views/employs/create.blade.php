@@ -1,9 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top:2%">
     <div class="row">
         <div class="col-12">
+        @include('flash-message')
+        @yield('content')
         <form action="{{ route('employ.store') }}" method="post">
                 @csrf
                 <div class="form-group">

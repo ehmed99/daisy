@@ -1,32 +1,72 @@
 /**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
+ * Theme: Metrica - Responsive Bootstrap 4 Admin Dashboard
+ * Author: Mannatthemes
+ * Module/App: Main Js
  */
 
-require('./bootstrap');
 
-window.Vue = require('vue');
+(function ($) {
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+    'use strict';
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+    function initSlimscroll() {
+        $('.slimscroll').slimscroll({
+            height: 'auto',
+            position: 'right',
+            size: "7px",
+            color: '#7681ad',
+            wheelStep: 5,
+            touchScrollStep: 50
+        });
+    }
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+   
+    function initEnlarge() {
+        if ($(window).width() < 1025) {
+            $('body').addClass('enlarge-menu');
+        } else {
+            if ($('body').data('keep-enlarged') != true)
+                $('body').removeClass('enlarge-menu');
+        }
+    }
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 
-const app = new Vue({
-    el: '#app',
-});
+    function initMainIconMenu() {
+        $(".navigation-menu a").each(function () {
+            var pageUrl = window.location.href.split(/[?#]/)[0];
+            if (this.href == pageUrl) {
+                $(this).parent().addClass("active"); // add active to li of the current link
+                $(this).parent().parent().parent().addClass("active"); // add active class to an anchor
+                $(this).parent().parent().parent().parent().parent().addClass("active"); // add active class to an anchor
+            }
+        });
+    }
+
+    function initTopbarMenu() {
+        $('.navbar-toggle').on('click', function (event) {
+            $(this).toggleClass('open');
+            $('#navigation').slideToggle(400);
+        });
+
+        $('.navigation-menu>li').slice(-2).addClass('last-elements');
+
+        $('.navigation-menu li.has-submenu a[href="#"]').on('click', function (e) {
+            if ($(window).width() < 992) {
+                e.preventDefault();
+                $(this).parent('li').toggleClass('open').find('.submenu:first').toggleClass('open');
+            }
+        });
+    }
+    
+
+    function init() {
+        initSlimscroll();
+        initEnlarge();
+        initMainIconMenu();
+        initTopbarMenu();
+        Waves.init();
+    }
+
+    init();
+
+})(jQuery)

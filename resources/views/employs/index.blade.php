@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top:2%">
     <div class="row">
         <div class="col-11"></div>
         <div class="col-1">
@@ -10,6 +10,8 @@
             </a>
         </div>
     </div>
+    @include('flash-message')
+    @yield('content')
     <table class="table">
         <thead>
           <tr>
