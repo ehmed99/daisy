@@ -31,7 +31,6 @@
                             <a class="dropdown-item" href="javascript: void(0);"><span> Russian </span><img src="{{ asset('/images/flags/russia_flag.jpg') }}" alt="" class="ml-2 float-right" height="14"/></a>
                         </div>
                     </li><!--end li-->
-s
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="false" aria-expanded="false">
@@ -140,7 +139,7 @@ s
                                 </a>
                             </li><!--end has-submenu-->
                             <li class="has-submenu">
-                                <a href="../ecommerce/ecommerce-employe.html"><i class="dripicons-trophy"></i>
+                                <a href="{{route('employ.index')}}"><i class="dripicons-trophy"></i>
                                     
                                     <span>Employe</span>
                                 </a>

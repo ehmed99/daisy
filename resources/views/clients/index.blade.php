@@ -107,7 +107,7 @@
                             {{$no=1}}
                             @foreach ($clients ?? '' as $client)
                             <tr>
-                            <th scope="row">{{ $no }}</th>
+                                <td scope="row">{{ $no }}</td>
                                 <td>{{ $client->name }}</td>
                                 <td>{{ $client->address }}</td>
                                 <td>{{ $client->clientPh }}</td>

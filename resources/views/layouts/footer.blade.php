@@ -16,13 +16,15 @@
         <script src="{{ asset('/js/jquery.slimscroll.min.js') }}"></script>
        
         <!-- Required datatable js -->
+        <script src="{{ asset('/plugins/apexcharts/apexcharts.min.js') }}"></script>
+        <script src="{{ asset('/plugins/apexcharts/irregular-data-series.js') }}"></script>
+        <script src="{{ asset('/plugins/apexcharts/ohlc.js') }}"></script>
+
         <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
         <script src="{{ asset('/plugins/peity-chart/jquery.peity.min.js') }}"></script>
         <script src="{{ asset('/plugins/moment/moment.js') }}"></script>
-        <script src="{{ asset('/plugins/apexcharts/apexcharts.min.js') }}"></script>
-        <script src="{{ asset('/plugins/apexcharts/irregular-data-series.js') }}"></script>
-        <script src="{{ asset('/plugins/apexcharts/ohlc.js') }}"></script>
+
         <script src="{{ asset('/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
         <script src="{{ asset('/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
         <script src="{{ asset('/plugins/parsleyjs/parsley.min.js') }}"></script>
