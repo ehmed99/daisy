@@ -137,7 +137,7 @@
                                 </a>
                             </li><!--end has-submenu-->
                             <li class="has-submenu">
-                                <a href="../ecommerce/ecommerce-product.html"><i class="dripicons-view-apps"></i>
+                                <a href="{{route('product.index')}}"><i class="dripicons-view-apps"></i>
                                     
                                     <span>Product</span>
                                 </a>

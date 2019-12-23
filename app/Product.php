@@ -5,11 +5,11 @@ namespace App;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Employ extends Eloquent
+class Product extends Eloquent
 {
     //
     use SoftDeletes;
     protected $fillable = [
-        'name', 'address','deleted_at'
+        'name', 'size','qty','deleted_at'
     ];
 }

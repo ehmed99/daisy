@@ -39,25 +39,25 @@ class EmployController extends Controller
     public function store(Request $request)
     {
         //
-        //todo: rename the vaiables names here, it shouldnt be employeName, it should only be name, address etc etc 
-        //todo: in database columes, dont use camel case for colume name, its okay to use in you code but not in database 
+        //todo: rename the vaiables names here, it shouldnt be employeName, it should only be name, address etc etc (DONE)
+        //todo: in database columes, dont use camel case for colume name, its okay to use in you code but not in database (DONE)
         $employValidate = request()->validate([
-            'emplyName' => 'required',
-            'employAddress' => 'required',
-            'employPh' => 'required',
-            'employJoining' => 'required',
-            'employSalary' => 'required',
-            'employDesignation' => 'required',
-            'employIncentives' => 'required'
+            'name' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
+            'joining' => 'required',
+            'salary' => 'required',
+            'designation' => 'required',
+            'incentives' => 'required'
             ]);
         $employ = new Employ;
-        $employ->emplyName = $request->input('emplyName');
-        $employ->employAddress = $request->input('employAddress');
-        $employ->employPh = $request->input('employPh');
-        $employ->employJoining = $request->input('employJoining');
-        $employ->employSalary = $request->input('employSalary');
-        $employ->employDesignation = $request->input('employDesignation');
-        $employ->employIncentives = $request->input('employIncentives');
+        $employ->name = $request->input('name');
+        $employ->address = $request->input('address');
+        $employ->phone = $request->input('phone');
+        $employ->joining = $request->input('joining');
+        $employ->salary = $request->input('salary');
+        $employ->designation = $request->input('designation');
+        $employ->incentives = $request->input('incentives');
         $employ->save();
         return redirect('employ')->withSuccess('Data is enter Success Fully');
     }
@@ -99,13 +99,13 @@ class EmployController extends Controller
     {
         //
         $employ = Employ::find($id);
-        $employ->emplyName = $request->input('emplyName');
-        $employ->employAddress = $request->input('employAddress');
-        $employ->employPh = $request->input('employPh');
-        $employ->employJoining = $request->input('employJoining');
-        $employ->employSalary = $request->input('employSalary');
-        $employ->employDesignation = $request->input('employDesignation');
-        $employ->employIncentives = $request->input('employIncentives');
+        $employ->name = $request->input('name');
+        $employ->address = $request->input('address');
+        $employ->phone = $request->input('phone');
+        $employ->joining = $request->input('joining');
+        $employ->salary = $request->input('salary');
+        $employ->designation = $request->input('designation');
+        $employ->incentives = $request->input('incentives');
         $employ->save();
         return redirect('employ');
     }

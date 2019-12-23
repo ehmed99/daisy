@@ -47,16 +47,6 @@
                                             <label for="qty">QTY</label>
                                             <input data-parsley-type="digits" type="text" name="qty" class="form-control" required data-parsley-max="200" placeholder="" id="qty" value="{{ $client->qty }}">
                                         </div><!--end form-group-->
-                                        <div class="col-sm-4" id="product">
-                                            <label for="product">Product</label>
-                                                <select name="product" class="form-control">
-                                                <option value="{{ $client->product }}">{{ $client->product }}</option>
-                                                <option value="600 ml">600 ml</option>
-                                                <option value="1.5 LTR">1.5 LTR</option>
-                                                <option value="6 LTR">6 LTR</option>
-                                                <option value="19 LTR">19 LTR</option>
-                                                </select>
-                                        </div><!--end col-->
                                         <br>
 
                                         <div class="form-group mb-0">

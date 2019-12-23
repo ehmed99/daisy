@@ -3,10 +3,12 @@
 namespace App;
 
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Client extends Eloquent
 {
+    use SoftDeletes;
     protected $fillable = [
-        'name', 'address'
+        'name', 'address','deleted_at'
     ];
 }

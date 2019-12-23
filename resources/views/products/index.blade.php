@@ -21,7 +21,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="header-title mt-0 mb-4">Employes Growth</h4>
+                                    <h4 class="header-title mt-0 mb-4">Products Growth</h4>
                                     <div class="chart-demo">
                                         <div id="apex_line1" class="apex-charts"></div>
                                     </div>                                        
@@ -36,7 +36,7 @@
                                     <div class="icon-contain">
                                         <div class="row">
                                             <div class="col-8 align-self-center">
-                                                <h5 class="">Returning Employes</h5>
+                                                <h5 class="">Returning Products</h5>
                                                 <p class="text-muted mb-0">Last Month : 150 <i class="mdi mdi-menu-up text-success font-16"></i></p>
                                             </div><!--end col-->
                                             <div class="col-4">
@@ -53,7 +53,7 @@
                                     <div class="icon-contain">
                                         <div class="row">
                                             <div class="col-8 align-self-center">
-                                                <h5 class="">New Employes</h5>
+                                                <h5 class="">New Products</h5>
                                                 <p class="text-muted mb-0">Last Month : 10 <i class="mdi mdi-menu-down text-danger font-16"></i></p>
                                             </div><!--end col-->
                                             <div class="col-4">
@@ -86,8 +86,8 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <button onclick="window.open('/employ/create')" class="btn btn-primary px-4 float-right mt-0 mb-3"><i class="mdi mdi-plus-circle-outline mr-2"></i>Add New Employe</button>
-                                    <h4 class="header-title mt-0">Employes Details</h4> 
+                                    <button onclick="window.open('/product/create')" class="btn btn-primary px-4 float-right mt-0 mb-3"><i class="mdi mdi-plus-circle-outline mr-2"></i>Add New Product</button>
+                                    <h4 class="header-title mt-0">Product Details</h4> 
                                     @include('flash-message')
                                     @yield('content')
                                     <div class="table-responsive dash-social">
@@ -95,32 +95,24 @@
                                             <thead class="thead-light">
                                             <tr>
                                                 <th>#</th>
-                                                <th>Employe Name</th>
-                                                <th>Address</th>
-                                                <th>Phone No</th>                                                    
-                                                <th>Joining Date</th>
-                                                <th>Salary</th>
-                                                <th>Incentives</th>
-                                                <th>Designation</th>
+                                                <th>Product Name</th>
+                                                <th>Size</th>
+                                                <th>Qty</th>                                                    
                                                 <th>Action</th>
                                             </tr><!--end tr-->
                                             </thead>
         
                                             <tbody>
                                             {{$no=1}}
-                                            @foreach ($employs ?? '' as $employ)
+                                            @foreach ($products ?? '' as $product)
                                             <tr>
                                                 <td scope="row">{{ $no }}</td>
-                                                <td>{{ $employ->name }}</td>
-                                                <td>{{ $employ->address }}</td>
-                                                <td>{{ $employ->phone }}</td>
-                                                <td>{{ $employ->joining }}</td>
-                                                <td>{{ $employ->salary }}</td>
-                                                <td>{{ $employ->incentives }}</td>
-                                                <td>{{ $employ->designation }}</td>
+                                                <td>{{ $product->product }}</td>
+                                                <td>{{ $product->size }}</td>
+                                                <td>{{ $product->qty }}</td>
                                                 <td class="row">
-                                                    <a href="employ/{{ $employ->id }}/edit" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
-                                                    <form action="{{ route('employ.destroy',$employ->id) }}" method="POST">
+                                                    <a href="product/{{ $product->id }}/edit" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
+                                                    <form action="{{ route('product.destroy',$product->id) }}" method="POST">
                                                         @csrf
                                                             @method('delete')
                                                             <button type="submit" class="fas fa-trash-alt text-danger font-16"></button>

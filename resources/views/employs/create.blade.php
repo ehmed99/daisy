@@ -35,24 +35,24 @@
                                     <form class="form-parsley" action="{{ route('employ.store') }}" method="post">
                                     @csrf
                                     <div class="form-group">
-                                            <label for="emplyName">Name</label>
-                                            <input type="text" name="emplyName" class="form-control" required placeholder="Name" id="emplyName"required data-parsley-minlength="4">
+                                            <label for="name">Name</label>
+                                            <input type="text" name="name" class="form-control" required placeholder="Name" id="name"required data-parsley-minlength="4">
                                         </div><!--end form-group-->
                                         <div class="form-group">
-                                            <label for="employAddress">Address</label>
-                                            <input type="text" name="employAddress" class="form-control" required placeholder="Address" id="employAddress" required data-parsley-minlength="6">
+                                            <label for="address">Address</label>
+                                            <input type="text" name="address" class="form-control" required placeholder="Address" id="address" required data-parsley-minlength="6">
                                         </div><!--end form-group-->
    
                                         <div class="form-group">
-                                            <label for="employPh" >Phone Number</label>
-                                            <input data-parsley-type="digits" type="text" name="employPh" class="form-control" required
-                                            data-parsley-length="[11,11]" placeholder="Number" id="employPh">
+                                            <label for="phone" >Phone Number</label>
+                                            <input data-parsley-type="digits" type="text" name="phone" class="form-control" required
+                                            data-parsley-length="[11,11]" placeholder="Number" id="phone">
                                         </div><!--end form-group-->
                                         <div class="form-group">
-                                            <label for="employjoining" >Joining Date</label>
+                                            <label for="joining" >Joining Date</label>
                                         <div class="input-group">                                            
-                                            <input type="text" name="emplyjoining" class="form-control" placeholder="2017-06-04" id="mdate">
-                                            <div class="input-group-append" id="employjoining">
+                                            <input type="text" name="joining" class="form-control" placeholder="2017-06-04" id="mdate">
+                                            <div class="input-group-append" id="joining">
                                              <span class="input-group-text"><i class="dripicons-calendar"></i></span>
                                             </div>
                                         </div>
@@ -60,19 +60,19 @@
                                             <!--end form-group-->
 
                                         <div class="form-group">
-                                            <label for="employSalary">Salary</label>
-                                            <input data-parsley-type="digits" type="text" name="employSalary" class="form-control" required data-parsley min="15000" max="100000" 
-                                            placeholder="" id="employSalary">
+                                            <label for="salary">Salary</label>
+                                            <input data-parsley-type="digits" type="text" name="salary" class="form-control" required data-parsley min="15000" max="100000" 
+                                            placeholder="" id="salary">
                                         <div class="form-group">
                                             <br>
 
-                                            <label for="employIncentives">Incentives</label>
-                                            <input type="text" name="employIncentives" class="form-control" required placeholder="" id="employIncentives" required data-parsley-max="15" data-parsley-type="alphanum">
+                                            <label for="incentives">Incentives</label>
+                                            <input type="text" name="incentives" class="form-control" required placeholder="" id="incentives" required data-parsley-max="15" data-parsley-type="alphanum">
                                         </div><!--end form-group-->
                                         </div><!--end form-group-->
                                         <div class="col-sm-4">
-                                            <label for="employDesignation">Designation</label>
-                                                <select name="employDesignation" class="form-control">
+                                            <label for="designation">Designation</label>
+                                                <select name="designation" class="form-control">
                                                 <option value="Superviser">Superviser</option>
                                                 <option value="Delivery Boy" selected="">Delivery Boy</option>
                                                 <option value="Accountant">Accountant</option>

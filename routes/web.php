@@ -21,4 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index');
 Route::resource('/client', 'ClientController');
 Route::resource('/employ', 'EmployController');
+Route::resource('/product', 'ProductController');
 
