@@ -22,7 +22,3 @@ Route::get('/admin', 'AdminController@index');
 Route::resource('/client', 'ClientController');
 Route::resource('/employ', 'EmployController');
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

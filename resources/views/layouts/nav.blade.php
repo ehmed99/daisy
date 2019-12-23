@@ -88,8 +88,12 @@
                             <a class="dropdown-item" href="#"><i class="dripicons-gear text-muted mr-2"></i> Settings</a>
                             <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted mr-2"></i> Lock screen</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
+                            <a class="dropdown-item" href="#" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
                         </div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </li><!--end dropdown-->
                     <li class="menu-item">
                         <!-- Mobile menu toggle-->

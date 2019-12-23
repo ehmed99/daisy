@@ -14,7 +14,7 @@ class EmployController extends Controller
      */
     public function index()
     {
-        //
+        //todo: orderBy created_at
         $employs = Employ::all();
         return view('employs.index', compact('employs'));
     }
@@ -39,6 +39,8 @@ class EmployController extends Controller
     public function store(Request $request)
     {
         //
+        //todo: rename the vaiables names here, it shouldnt be employeName, it should only be name, address etc etc 
+        //todo: in database columes, dont use camel case for colume name, its okay to use in you code but not in database 
         $employValidate = request()->validate([
             'emplyName' => 'required',
             'employAddress' => 'required',
@@ -116,7 +118,7 @@ class EmployController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //todo: dont use hard delete, always use soft delete, laravel has builtin functionality of soft delete, see the official docs 
         $employ = Employ::find($id);
         $employ->delete();
         return redirect('employ');

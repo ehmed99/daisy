@@ -50,6 +50,7 @@ class ClientController extends Controller
         $client->clientPh = $request->input('clientPh');
         $client->rate = $request->input('rate');
         $client->qty = $request->input('qty');
+        //todo: remove product from there
         $client->product = $request->input('product');
         $client->save();
         return redirect('client');
