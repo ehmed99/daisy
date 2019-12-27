@@ -63,7 +63,7 @@ class ClientController extends Controller
     public function show($id)
     {
         $client = Client::find($id);
-        return view('client.show', compact('client'));
+        return view('clients.show', compact('client'));
     }
 
     /**
@@ -76,7 +76,8 @@ class ClientController extends Controller
     {
         $client = Client::find($id);
         return view('clients.edit', compact('client'));
-        
+        // return new ClientResource($client);
+
     }
 
     /**
