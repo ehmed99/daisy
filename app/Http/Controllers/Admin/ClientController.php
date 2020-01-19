@@ -1,10 +1,10 @@
 <?php
-
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
+use App\Http\Controllers\Controller;
 
 use App\Client;
 use Illuminate\Http\Request;
-
+use Auth;
 class ClientController extends Controller
 {
     /**

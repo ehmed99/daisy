@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\admin;
+use App\Http\Controllers\Controller;
 use App\Employ;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class EmployController extends Controller
 {
@@ -14,8 +16,7 @@ class EmployController extends Controller
      */
     public function index()
     {
-        //todo: orderBy created_at
-        $employs = Employ::all();
+        $employs = User::where('user_type', '!=', 'admin')->get();
         return view('employs.index', compact('employs'));
     }
 
@@ -38,9 +39,6 @@ class EmployController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //todo: rename the vaiables names here, it shouldnt be employeName, it should only be name, address etc etc (DONE)
-        //todo: in database columes, dont use camel case for colume name, its okay to use in you code but not in database (DONE)
         $employValidate = request()->validate([
             'name' => 'required',
             'address' => 'required',
@@ -50,7 +48,8 @@ class EmployController extends Controller
             'designation' => 'required',
             'incentives' => 'required'
             ]);
-        $employ = new Employ;
+        //todo:: use this user model for empolye
+        $employ = new User;
         $employ->name = $request->input('name');
         $employ->address = $request->input('address');
         $employ->phone = $request->input('phone');
@@ -58,8 +57,12 @@ class EmployController extends Controller
         $employ->salary = $request->input('salary');
         $employ->designation = $request->input('designation');
         $employ->incentives = $request->input('incentives');
+        //todo: get password and email from the form
+        $employ->email = "test@test.com";
+        $employ->password = Hash::make($request->input('phone'));
+
         $employ->save();
-        return redirect('employ')->withSuccess('Data is enter Success Fully');
+        return redirect('/admin/employ')->withSuccess('Data is enter Success Fully');
     }
 
     /**
@@ -118,9 +121,9 @@ class EmployController extends Controller
      */
     public function destroy($id)
     {
+        $user = User::find($id);
         //todo: dont use hard delete, always use soft delete, laravel has builtin functionality of soft delete, see the official docs 
-        $employ = Employ::find($id);
-        $employ->delete();
-        return redirect('employ');
+        $user->delete();
+        return redirect()->route('employ.index');
     }
 }

@@ -119,10 +119,11 @@
                                                 <td>{{ $employ->incentives }}</td>
                                                 <td>{{ $employ->designation }}</td>
                                                 <td class="row">
-                                                    <a href="employ/{{ $employ->id }}/edit" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
-                                                    <form action="{{ route('employ.destroy',$employ->id) }}" method="POST">
-                                                        @csrf
-                                                            @method('delete')
+                                                    {{--  <a href="employ/{{ $employ->id }}/edit" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>  --}}
+                                                    <a href="{{ route('employ.edit', $employ->_id) }}" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
+                                                    <form action="{{ route('employ.destroy', $employ->_id) }}" method="post">
+                                                        {{ csrf_field() }}
+                                                        @method('DELETE')
                                                             <button type="submit" class="fas fa-trash-alt text-danger font-16"></button>
                                                     </form>
                                                 </td>

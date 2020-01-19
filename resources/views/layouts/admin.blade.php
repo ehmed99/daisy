@@ -3,11 +3,12 @@
     <head>
         <meta charset="utf-8" />
         <title>DasiyWater</title>
-@include('layouts.header')
+        @include('layouts.header')
+        @stack('css')
+
       <div id="app">
           @auth
-          @include('layouts.nav')
-              
+                @include('layouts.nav')
           @endauth
           
         <main class="py-4">
@@ -16,6 +17,7 @@
               
         </main>
         @include('layouts.footer')
+        @stack('js')
     </div>
 </body>
 </html>

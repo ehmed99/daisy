@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\admin;
+use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -48,6 +48,8 @@ class ProductController extends Controller
         $product->product = $request->input('product');
         $product->size = $request->input('size');
         $product->qty = $request->input('qty');
+        //todo:: add price of each products
+        $product->price = "20";
         $product->save();
         return redirect('product')->withSuccess('Data is enter Success Fully');
     }

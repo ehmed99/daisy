@@ -118,6 +118,7 @@
                 </ul><!--end topbar-nav-->
             </nav>
             <!-- end navbar-->
+            @if(Auth::user()->user_type == "admin")
              <!-- MENU Start -->
             <div class="navbar-custom-menu">
                 <div class="container-fluid">
@@ -125,7 +126,7 @@
                         <!-- Navigation Menu-->
                         <ul class="navigation-menu">
                             <li class="has-submenu">
-                                <a class="active" href="{{route('home')}}"><i class="dripicons-device-desktop"></i>
+                                <a class="active" href="{{route('admin')}}"><i class="dripicons-device-desktop"></i>
                                     
                                     <span>Dashboard</span>
                                 </a>
@@ -152,5 +153,6 @@
                     </div> <!-- end navigation -->
                 </div> <!-- end container-fluid -->
             </div> <!-- end navbar-custom -->
+            @endif
         </div>
         <!-- Top Bar End -->
