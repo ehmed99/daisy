@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -27,6 +28,13 @@ class HomeController extends Controller
     }
 
     public function landingPage(){
+        if(Auth::user() && Auth :: user()-> user_type == "admin")
+        {
+        return redirect('/admin');
+        }
+        else
+        {
         return view('landingPage');
+        }
     }
 }

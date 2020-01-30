@@ -2,7 +2,7 @@
 
 @section('content')
      <!-- Log In page -->
-     <div class="row vh-100 account-body accountbg">
+     <div class="row vh-100 account-body">
         <div class="col-4 offset-4 mt-5  align-self-center">
             <div class="auth-page">
                 <div class="card auth-card shadow-lg">
@@ -13,8 +13,8 @@
                             </div><!--end auth-logo-box-->
                             
                             <div class="text-center auth-logo-text">
-                                <h4 class="mt-0 mb-3 mt-5">Let's Get Started Metrica</h4>
-                                <p class="text-muted mb-0">Sign in to continue to Metrica.</p>  
+                                <h4 class="mt-0 mb-3 mt-5">Let's Get Started Daisy</h4>
+                                <p class="text-muted mb-0">Sign in to continue to Daisy.</p>  
                             </div> <!--end auth-logo-text-->  
 
                             

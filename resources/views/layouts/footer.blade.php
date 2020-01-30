@@ -32,6 +32,7 @@
         <script src="{{ asset('/pages/jquery.validation.init.js') }}"></script>
         <script src="{{ asset('/pages/jquery.ana_customers.inity.js') }}"></script>
         <script src="{{ asset('/pages/jquery.eco_dashboard.init.js') }}"></script>
+        <script src="{{ asset('/pages/jquery.apexcharts.init.js') }}"></script>
         
 
         <script src="{{ asset('/js/jquery.core.js') }}"></script>

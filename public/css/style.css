@@ -9211,3 +9211,9 @@ hr.thick {
   }
 }
 /*# sourceMappingURL=style.css.map */
+/* Custom Classes  */
+.custom-main-btn {
+  padding: 10% 0; 
+  font-size: 30px
+  
+}

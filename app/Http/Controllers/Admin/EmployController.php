@@ -110,7 +110,7 @@ class EmployController extends Controller
         $employ->designation = $request->input('designation');
         $employ->incentives = $request->input('incentives');
         $employ->save();
-        return redirect('employ');
+        return redirect('admin/employ');
     }
 
     /**

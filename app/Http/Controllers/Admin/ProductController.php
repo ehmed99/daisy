@@ -42,16 +42,19 @@ class ProductController extends Controller
         $productValidate = request()->validate([
             'product' => 'required',
             'size' => 'required',
-            'qty' => 'required'
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
         $product = new Product;
         $product->product = $request->input('product');
         $product->size = $request->input('size');
-        $product->qty = $request->input('qty');
+        $product->img = $request->file('img');
+        $new_name = 'product.'.$product->img->getClientOriginalExtension();
+        $product->img->move($new_name,'img');
+
         //todo:: add price of each products
         $product->price = "20";
         $product->save();
-        return redirect('product')->withSuccess('Data is enter Success Fully');
+        return redirect('admin/product')->withSuccess('Data is enter Success Fully')->with('path',$new_name);
     }
 
     /**
@@ -93,9 +96,10 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->product = $request->input('product');
         $product->size = $request->input('size');
-        $product->qty = $request->input('qty');
+        $product->img = $request->input('img');
+
         $product->save();
-        return redirect('product');
+        return redirect('admin/product');
     }
 
     /**

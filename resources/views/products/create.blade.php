@@ -32,21 +32,27 @@
                                     <h4 class="mt-0 header-title">Product Details</h4>
                                     @include('flash-message')
                                     @yield('content')
-                                    <form class="form-parsley" action="{{ route('product.store') }}" method="post">
+                                    <form class="form-parsley" action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
                                         <label for="product">Product Name</label>
-                                        <input type="text" name="product" class="form-control" required placeholder="product" id="product"required data-parsley-minlength="4">
+                                        <select class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" id="product" name="product">
+                                            <option value="600ml">600ml</option>
+                                            <option value="1.5 ltr">1.5 ltr</option>
+                                            <option value="6 ltr">6 ltr</option>
+                                            <option value="19 ltr" selected="">19 ltr</option>
+                                        </select>
+                                    </div><!--end form-group-->
+                                    <div class="form-group">
+                                        <label for="img">Upload Image</label>
+                                        <input type="file" name="img" class="form-control" required placeholder="img" id="img" required>
                                     </div><!--end form-group-->
                                     <div class="form-group">
                                         <label for="size">Size</label>
                                         <input type="text" name="size" class="form-control" required placeholder="size" id="size" required>
                                     </div><!--end form-group-->
 
-                                    <div class="form-group">
-                                        <label for="qty" >Qty</label>
-                                        <input data-parsley-type="digits" type="text" name="qty" class="form-control" required  placeholder="qty" id="qty">
-                                    </div><!--end form-group-->
+                                
                                     
                                     <br>
 

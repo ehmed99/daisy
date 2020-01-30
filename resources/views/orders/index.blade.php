@@ -101,6 +101,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
+                            <button onclick="window.open('admin/client/create')"  class="btn btn-primary px-4 float-right mt-0 mb-3"><i class="mdi mdi-plus-circle-outline mr-2"></i>Add New Customer</button>
                             <h4 class="mt-0 header-title">Customer Details</h4>
                             <form class="form-parsley" action="{{ route('order') }}" method="post">
                                 @csrf

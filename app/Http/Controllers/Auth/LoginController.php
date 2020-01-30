@@ -28,6 +28,7 @@ class LoginController extends Controller
     // protected $redirectTo = '/home';
     protected function redirectTo()
     {
+        
         // return redirect('client');
         // if(\Auth::user()->user_type == "admin"){
         //     return '/admin';

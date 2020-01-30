@@ -18,7 +18,7 @@ class Product extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('size');
-            $table->string('qty');
+            $table->string('img');
             $table->softDeletes('deleted_at');
             $table->timestamps();
         });

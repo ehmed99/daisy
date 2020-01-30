@@ -41,17 +41,17 @@ class ClientController extends Controller
             'address' => 'required',
             'clientPh' => 'required',
             'rate' => 'required',
-            'qty' => 'required'
+            'product' => 'required'
             ]);
         $client = new Client;
         $client->name = $request->input('name');
         $client->address = $request->input('address');
         $client->clientPh = $request->input('clientPh');
         $client->rate = $request->input('rate');
-        $client->qty = $request->input('qty');
+        $client->product = $request->input('product');
         //todo: remove product from there (DONE)
         $client->save();
-        return redirect('client');
+        return redirect('admin/client');
     }
 
     /**
@@ -94,9 +94,9 @@ class ClientController extends Controller
         $client->address = $request->input('address');
         $client->clientPh = $request->input('clientPh');
         $client->rate = $request->input('rate');
-        $client->qty = $request->input('qty');
+        $client->product = $request->input('product');
         $client->save();
-        return redirect('client');
+        return redirect('admin/client');
     }
 
     /**
@@ -109,7 +109,7 @@ class ClientController extends Controller
     {
         $client = Client::find($id);
         $client->delete();
-        return redirect('client');
+        return redirect('admin/client');
 
     }
 }

@@ -149,6 +149,41 @@
                                     <span>Employe</span>
                                 </a>
                             </li><!--end has-submenu-->
+                            <li class="has-submenu">
+                                <a href="admin/orders"><i class="dripicons-view-apps"></i>
+                                    
+                                    <span>Orders</span>
+                                </a>
+                            </li><!--end has-submenu-->
+                            
+                        </ul><!-- End navigation menu -->
+                    </div> <!-- end navigation -->
+                </div> <!-- end container-fluid -->
+            </div> <!-- end navbar-custom -->
+            @else
+            <div class="navbar-custom-menu">
+                <div class="container-fluid">
+                    <div id="navigation">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+                            <li class="has-submenu">
+                                <a href="{{route('admin')}}"><i class="dripicons-device-desktop"></i>
+                                    
+                                    <span>Dashboard</span>
+                                </a>
+                            </li><!--end has-submenu-->
+                            <li class="has-submenu">
+                                <a class="active" href="{{route('record')}}"><i class="dripicons-user-group"></i>
+                                    
+                                    <span>Records</span>
+                                </a>
+                            </li><!--end has-submenu-->
+                            <li class="has-submenu">
+                                <a href="{{route('order')}}"><i class="dripicons-view-apps"></i>
+                                    
+                                    <span>Orders</span>
+                                </a>
+                            </li><!--end has-submenu-->
                         </ul><!-- End navigation menu -->
                     </div> <!-- end navigation -->
                 </div> <!-- end container-fluid -->
@@ -156,3 +191,4 @@
             @endif
         </div>
         <!-- Top Bar End -->
+        
