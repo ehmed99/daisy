@@ -150,7 +150,7 @@
                                 </a>
                             </li><!--end has-submenu-->
                             <li class="has-submenu">
-                                <a href="admin/orders"><i class="dripicons-view-apps"></i>
+                                <a href="./orders"><i class="dripicons-view-apps"></i>
                                     
                                     <span>Orders</span>
                                 </a>

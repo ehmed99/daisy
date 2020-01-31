@@ -74,7 +74,7 @@ class EmployController extends Controller
     public function show(Employ $employ)
     {
         //
-        $employ = Employ::find($id);
+        $employ = User::find($id);
         return view('employ.show', compact('employ'));
     }
 
@@ -87,7 +87,7 @@ class EmployController extends Controller
     public function edit($id)
     {
         //
-        $employ = Employ::find($id);
+        $employ = User::find($id);
         return view('employs.edit', compact('employ'));
     }
 
@@ -101,7 +101,7 @@ class EmployController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $employ = Employ::find($id);
+        $employ = User::find($id);
         $employ->name = $request->input('name');
         $employ->address = $request->input('address');
         $employ->phone = $request->input('phone');

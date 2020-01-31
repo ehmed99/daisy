@@ -30,9 +30,12 @@ Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'admin'])->group
     Route::resource('/client', 'ClientController');
     Route::resource('employ', 'EmployController');
     Route::resource('product', 'ProductController');
+    Route::resource('discountVoucher', 'discountVoucherController');
+    
 });
 Route::get('/dashboard', 'OrderController@dashboard')->middleware(['auth']);
 Route::get('/order', 'OrderController@order')->middleware(['auth']);
 Route::get('/record', 'RecordController@index')->name('record');
 Route::post('/order', 'OrderController@submitOrder')->name('order')->middleware(['auth']);
+
 
