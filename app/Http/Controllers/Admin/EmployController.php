@@ -46,7 +46,8 @@ class EmployController extends Controller
             'joining' => 'required',
             'salary' => 'required',
             'designation' => 'required',
-            'incentives' => 'required'
+            'incentives' => 'required',
+            'email' => 'required'
             ]);
         //todo:: use this user model for empolye
         $employ = new User;
@@ -58,7 +59,7 @@ class EmployController extends Controller
         $employ->designation = $request->input('designation');
         $employ->incentives = $request->input('incentives');
         //todo: get password and email from the form
-        $employ->email = "test@test.com";
+        $employ->email = $request->input('email');
         $employ->password = Hash::make($request->input('phone'));
 
         $employ->save();
@@ -109,6 +110,7 @@ class EmployController extends Controller
         $employ->salary = $request->input('salary');
         $employ->designation = $request->input('designation');
         $employ->incentives = $request->input('incentives');
+        $employ->email = $request->input('email');
         $employ->save();
         return redirect('admin/employ');
     }

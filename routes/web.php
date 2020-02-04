@@ -28,9 +28,10 @@ Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'admin'])->group
     Route::get('/', 'AdminController@index')->name('admin');
     Route::get('/orders', 'AdminController@orders');
     Route::resource('/client', 'ClientController');
+    // Route::get('/client/invoice', 'ClientController@invoice');
     Route::resource('employ', 'EmployController');
     Route::resource('product', 'ProductController');
-    Route::resource('discountVoucher', 'discountVoucherController');
+    Route::resource('/discountVoucher', 'discountVoucherController');
     
 });
 Route::get('/dashboard', 'OrderController@dashboard')->middleware(['auth']);

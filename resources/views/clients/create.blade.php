@@ -42,15 +42,7 @@
                                             <label for="rate">Rate</label>
                                             <input data-parsley-type="digits" type="text" name="rate" class="form-control" required min="50" max="150" placeholder="" id="rate">
                                         </div><!--end form-group-->
-                                        <div class="form-group">
-                                            <label for="product">Product</label>
-                                            <select class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" id="product" name="product">
-                                                <option value="600ml">600ml</option>
-                                                <option value="1.5 ltr">1.5 ltr</option>
-                                                <option value="6 ltr">6 ltr</option>
-                                                <option value="19 ltr" selected="">19 ltr</option>
-                                            </select>
-                                        </div><!--end form-group-->
+                                        
                                         <br>
 
                                         <div class="form-group mb-0">

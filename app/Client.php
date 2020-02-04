@@ -9,6 +9,6 @@ class Client extends Eloquent
 {
     use SoftDeletes;
     protected $fillable = [
-        'name', 'address','deleted_at','clientPh','rate','product'
+        'name', 'address','deleted_at','clientPh','rate'
     ];
 }

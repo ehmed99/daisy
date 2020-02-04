@@ -155,6 +155,12 @@
                                     <span>Orders</span>
                                 </a>
                             </li><!--end has-submenu-->
+                            <li class="has-submenu">
+                                <a href="/admin/invoice"><i class="dripicons-view-apps"></i>
+                                    
+                                    <span>Invoice</span>
+                                </a>
+                            </li><!--end has-submenu-->
                             
                         </ul><!-- End navigation menu -->
                     </div> <!-- end navigation -->

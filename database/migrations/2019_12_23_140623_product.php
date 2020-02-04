@@ -19,6 +19,7 @@ class Product extends Migration
             $table->string('name');
             $table->string('size');
             $table->string('img');
+            $table->string('price');
             $table->softDeletes('deleted_at');
             $table->timestamps();
         });

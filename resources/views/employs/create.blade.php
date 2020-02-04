@@ -65,11 +65,15 @@
                                             placeholder="" id="salary">
                                         <div class="form-group">
                                             <br>
-
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="text" name="email" class="form-control" required placeholder="email" id="email"required >
+                                            </div><!--end form-group-->
+                                            <div class="form-group">
                                             <label for="incentives">Incentives</label>
                                             <input type="text" name="incentives" class="form-control" required placeholder="" id="incentives" required data-parsley-max="15" data-parsley-type="alphanum">
                                         </div><!--end form-group-->
-                                        </div><!--end form-group-->
+                                        
                                         <div class="col-sm-4">
                                             <label for="designation">Designation</label>
                                                 <select name="designation" class="form-control">

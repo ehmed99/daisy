@@ -23,6 +23,7 @@ class EmployTable extends Migration
             $table->string('salary');
             $table->string('designation');
             $table->string('incentives');
+            $table->string('email');
             $table->softDeletes('deleted_at');
             $table->timestamps();
         });

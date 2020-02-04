@@ -48,6 +48,10 @@
                                         <input type="file" name="img" class="form-control" required placeholder="img" id="img" required>
                                     </div><!--end form-group-->
                                     <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <input type="text" name="price" class="form-control" required placeholder="price" id="price" required>
+                                    </div><!--end form-group-->
+                                    <div class="form-group">
                                         <label for="size">Size</label>
                                         <input type="text" name="size" class="form-control" required placeholder="size" id="size" required>
                                     </div><!--end form-group-->

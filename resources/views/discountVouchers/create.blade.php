@@ -33,19 +33,31 @@
                                     @yield('content')
                             <form class="form-parsley" action="{{ route('discountVoucher.store') }}"method="post">
                                 @csrf
+                                <h4 class="header-title mt-0 mb-3">Customer Infomation</h4>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <select class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" name="client">
+                                        @if(is_array($clients ?? '')||is_object($clients ?? ''))
+                                        @foreach ($clients ?? '' as $client)
+                                        <option value="{{ $client->id }}"> {{ $client->name }} ( {{ $client->address }}</option>
+                                        @endforeach
+                                        @endif
+                                    </select>
+                                </div>
                                 <div class="form-group">
                                     <label>Voucher Name</label>
                                     <input type="text" name="vourcher_name" class="form-control" required placeholder="vourcher_name" id="vourcher_name" required data-parsley-minlength="4">
                                 </div><!--end form-group-->
-                                <div class="col-sm-4" id="productname">
-                                    <label>Product Name</label>
-                                        <select name="product_name" class="form-control">
-                                        <option value="600 ML">600 ML</option>
-                                        <option value="1.5 Litters" selected="">1.5 Litters</option>
-                                        <option value="6 Litters">6 Litters</option>
-                                        <option value="9 Litters">9 Litters</option>
-                                        </select>
-                                </div><!--end col-->
+                                <div class="form-group">
+                                    <label for="product">Product</label>
+                                    <select class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" id="product" name="product">
+                                        @if(is_array($products ?? '')||is_object($products ?? ''))
+                                    @foreach ($products ?? '' as $product)
+                                    <option value="{{ $product->id }}"> {{ $product->product }} </option>
+                                    @endforeach
+                                    @endif
+                                </select>
+                                </div>
                                 <br>
                                 <div class="form-group">
                                     <label>Discount</label>

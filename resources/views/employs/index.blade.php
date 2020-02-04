@@ -28,6 +28,7 @@
                                                 <th>Phone No</th>                                                    
                                                 <th>Joining Date</th>
                                                 <th>Salary</th>
+                                                <th>Email</th>
                                                 <th>Incentives</th>
                                                 <th>Designation</th>
                                                 <th>Action</th>
@@ -44,6 +45,7 @@
                                                 <td>{{ $employ->phone }}</td>
                                                 <td>{{ $employ->joining }}</td>
                                                 <td>{{ $employ->salary }}</td>
+                                                <td>{{ $employ->email }}</td>
                                                 <td>{{ $employ->incentives }}</td>
                                                 <td>{{ $employ->designation }}</td>
                                                 <td class="row">

@@ -64,7 +64,10 @@
                                             <input data-parsley-type="digits" type="text" name="salary" class="form-control" required data-parsley min="15000" max="100000" placeholder="" id="salary" value="{{ $employ->salary }}">
                                         <div class="form-group">
                                             <br>
-
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="text" name="email" class="form-control" required placeholder="email" id="email"required value="{{ $employ->email }}">
+                                            </div><!--end form-group-->
                                             <label for="incentives">Incentives</label>
                                             <input type="text" name="incentives" class="form-control" required placeholder="" id="incentives" required data-parsley-max="15" data-parsley-type="alphanum" value="{{ $employ->incentives }}">
                                         </div><!--end form-group-->

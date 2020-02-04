@@ -31,7 +31,6 @@
                                 <th scope="col">Address</th>
                                 <th scope="col">Phone No</th>
                                 <th scope="col">Max Rate</th>
-                                <th scope="col">Product</th>
                                 <th scope="col">Actions</th>
                             </tr><!--end tr-->
                             </thead>
@@ -45,7 +44,6 @@
                                 <td>{{ $client->address }}</td>
                                 <td>{{ $client->clientPh }}</td>
                                 <td>{{ $client->rate }}</td>
-                                <td>{{ $client->product }}</td>
                                 <td class="row">
                                     <a href="client/{{ $client->id }}/edit" class="fas fa-edit text-info font-16"></a>
                                     <form action="{{ route('client.destroy',$client->id) }}" method="POST">

@@ -83,6 +83,7 @@
                                                 <th>#</th>
                                                 <th>Product Name</th>
                                                 <th>Product Image</th>
+                                                <th>Product Price</th>
                                                 <th>Size</th>                                                   
                                                 <th>Action</th>
                                             </tr><!--end tr-->
@@ -95,6 +96,7 @@
                                                 <td scope="row">{{ $loop->iteration }}</td>
                                                 <td>{{ $product->product }}</td>
                                                 <td><img src="/image/{{Session::get('path')}}" with="100" ></td>
+                                                <td>{{ $product->price }}</td>
                                                 <td>{{ $product->size }}</td>
                                                 <td class="row">
                                                     <a href="product/{{ $product->id }}/edit" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>

@@ -10,6 +10,6 @@ class Product extends Eloquent
     //
     use SoftDeletes;
     protected $fillable = [
-        'name', 'size','deleted_at','img'
+        'name', 'size','deleted_at','img','price'
     ];
 }

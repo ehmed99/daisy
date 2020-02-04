@@ -43,6 +43,7 @@ class ProductController extends Controller
             'product' => 'required',
             'size' => 'required',
             'img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'price' => 'required'
             ]);
         $product = new Product;
         $product->product = $request->input('product');
@@ -50,9 +51,8 @@ class ProductController extends Controller
         $product->img = $request->file('img');
         $new_name = 'product.'.$product->img->getClientOriginalExtension();
         $product->img->move($new_name,'img');
-
-        //todo:: add price of each products
-        $product->price = "20";
+        $product->price = $request->input('price');
+        //todo:: add price of each products(DONE)
         $product->save();
         return redirect('admin/product')->withSuccess('Data is enter Success Fully')->with('path',$new_name);
     }
@@ -97,7 +97,7 @@ class ProductController extends Controller
         $product->product = $request->input('product');
         $product->size = $request->input('size');
         $product->img = $request->input('img');
-
+        $product->price = $request->input('price');
         $product->save();
         return redirect('admin/product');
     }
@@ -113,6 +113,6 @@ class ProductController extends Controller
         //
         $product = Product::find($id);
         $product->delete();
-        return redirect('product');
+        return redirect('admin/product');
     }
 }

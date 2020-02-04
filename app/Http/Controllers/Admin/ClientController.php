@@ -40,15 +40,13 @@ class ClientController extends Controller
             'name' => 'required',
             'address' => 'required',
             'clientPh' => 'required',
-            'rate' => 'required',
-            'product' => 'required'
+            'rate' => 'required'
             ]);
         $client = new Client;
         $client->name = $request->input('name');
         $client->address = $request->input('address');
         $client->clientPh = $request->input('clientPh');
         $client->rate = $request->input('rate');
-        $client->product = $request->input('product');
         //todo: remove product from there (DONE)
         $client->save();
         return redirect('admin/client');
@@ -64,6 +62,15 @@ class ClientController extends Controller
     {
         $client = Client::find($id);
         return view('clients.show', compact('client'));
+        // if(isset($id))
+        // {
+        //     return view('clients.show', compact('client'));
+            
+        // }
+        // else
+        // {
+        //     return view('clients.invoice', compact('client'));
+        // }
     }
 
     /**
@@ -94,7 +101,6 @@ class ClientController extends Controller
         $client->address = $request->input('address');
         $client->clientPh = $request->input('clientPh');
         $client->rate = $request->input('rate');
-        $client->product = $request->input('product');
         $client->save();
         return redirect('admin/client');
     }
@@ -111,5 +117,10 @@ class ClientController extends Controller
         $client->delete();
         return redirect('admin/client');
 
+    }
+    // Custome Function Invoices
+    public function invoice()
+    {
+        return redirect('admin/client/invoice');
     }
 }

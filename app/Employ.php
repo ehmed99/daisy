@@ -10,6 +10,6 @@ class Employ extends Eloquent
     //
     use SoftDeletes;
     protected $fillable = [
-        'name', 'address','deleted_at'
+        'name', 'address','deleted_at','email'
     ];
 }

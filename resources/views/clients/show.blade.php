@@ -6,6 +6,7 @@
     <!-- Page Content-->
     <div class="page-content">
         <div class="container-fluid">
+        <button onclick="window.open('/admin/client/invoice')"  class="btn btn-primary px-4 float-right mt-0 mb-3"><i class="mdi mdi-plus-circle-outline mr-2"></i>Invoice</button>
             <h1>Client Information</h1>
             <h5>Name :  {{ $client->name }}</h5>
             <h5>Address :  {{ $client->address }}</h5>
