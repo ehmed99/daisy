@@ -10,7 +10,7 @@ class Order extends Eloquent
     //
     use SoftDeletes;
     protected $fillable = [
-        'client_id', 'product_id','user_id','paid_amount', 'total_bill', 'quantity'
+        'client_id', 'product_id','user_id','paid_amount', 'total_bill', 'quantity', 'discount_id'
     ];
 
     public function client()
@@ -26,5 +26,10 @@ class Order extends Eloquent
     public function emp()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function discount()
+    {
+        return $this->belongsTo(discountVoucher::class, 'discount_id');
     }
 }

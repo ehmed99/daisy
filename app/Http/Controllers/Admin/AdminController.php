@@ -13,6 +13,10 @@ class AdminController extends Controller
     }
     public function orders(){
         $orders  = Order::all();
+        $total_sales = 0;
+        // $foreach($orders as $order){
+
+        // }
         return view('allOrders', compact('orders'));
     }
 }

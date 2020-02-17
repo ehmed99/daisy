@@ -30,7 +30,6 @@
                     <div class="card">
                         <div class="card-body">
                             @include('flash-message')
-                                    @yield('content')
                             <form class="form-parsley" action="{{ route('discountVoucher.store') }}"method="post">
                                 @csrf
                                 <h4 class="header-title mt-0 mb-3">Customer Infomation</h4>
@@ -38,9 +37,9 @@
                                     <label for="address">Address</label>
                                     <select class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" name="client">
                                         @if(is_array($clients ?? '')||is_object($clients ?? ''))
-                                        @foreach ($clients ?? '' as $client)
-                                        <option value="{{ $client->id }}"> {{ $client->name }} ( {{ $client->address }}</option>
-                                        @endforeach
+                                            @foreach ($clients ?? '' as $client)
+                                                <option value="{{ $client->id }}"> {{ $client->name }} ( {{ $client->address }}</option>
+                                            @endforeach
                                         @endif
                                     </select>
                                 </div>
@@ -52,18 +51,16 @@
                                     <label for="product">Product</label>
                                     <select class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" id="product" name="product">
                                         @if(is_array($products ?? '')||is_object($products ?? ''))
-                                    @foreach ($products ?? '' as $product)
-                                    <option value="{{ $product->id }}"> {{ $product->product }} </option>
-                                    @endforeach
-                                    @endif
+                                            @foreach ($products ?? '' as $product)
+                                                <option value="{{ $product->id }}"> {{ $product->product }} </option>
+                                            @endforeach
+                                        @endif
                                 </select>
                                 </div>
-                                <br>
                                 <div class="form-group">
                                     <label>Discount</label>
                                     <input type="text" name="discount"class="form-control" required placeholder="" id="discount" required data-parsley-minlength="4">
                                 </div><!--end form-group-->
-                                <br>
                                 <div class="form-group mb-0">
                                     <button type="submit" class="btn btn-primary waves-effect waves-light">
                                         Submit
@@ -74,14 +71,14 @@
                                 </div><!--end form-group-->
                             </form><!--end form-->   
                             @if($errors->any())
-                                    <div>
-                                        <ul>
-                                            @foreach($errors->all() as $error)
-                                            <li>{{$error}}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                    @endif            
+                            <div>
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif            
                         </div><!--end card-body-->
                     </div><!--end card-->
                 </div> <!-- end col -->

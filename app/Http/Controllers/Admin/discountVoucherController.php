@@ -18,16 +18,16 @@ class discountVoucherController extends Controller
     public function index()
     {
         //
-        $clients = Client::all();
-        $products = Product::all();
-        return view('discountVouchers.index', compact('clients', 'products'));
+        $discountVourchers = discountVoucher::all();
+        return view('discountVouchers.index', compact('discountVourchers'));
         
     }
 
     public function create()
     {
-        //
-        return view('discountVouchers.create');
+        $clients = Client::all();
+        $products = Product::all();
+        return view('discountVouchers.create', compact('clients', 'products'));
     }
 
     public function store(Request $request)

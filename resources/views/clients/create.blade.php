@@ -37,11 +37,11 @@
                                             <label for="clientPh">Phone Number</label>
                                             <input data-parsley-type="digits"type="text" name="clientPh" class="form-control" required data-parsley-length="[11,11]" placeholder="Number" id="clientPh">
                                         </div><!--end form-group-->
-
+{{--  
                                         <div class="form-group">
                                             <label for="rate">Rate</label>
                                             <input data-parsley-type="digits" type="text" name="rate" class="form-control" required min="50" max="150" placeholder="" id="rate">
-                                        </div><!--end form-group-->
+                                        </div><!--end form-group-->  --}}
                                         
                                         <br>
 

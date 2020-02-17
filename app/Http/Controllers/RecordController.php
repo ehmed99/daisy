@@ -20,16 +20,7 @@ class RecordController extends Controller
      */
     public function index()
     {
-        //
-        // $clients = Client::all();
-        // $products = Product::all();
-        // $orders = Order::all();
-        // $data =[
-        //     'name'=>$request->input('client->name'),
-        //     'address'=> $request->input('client->address'),
-        //     'order'=>$request->input('product')
-        // ];
-        // return view('records.index', compact('clients', 'products','orders'));
-        return view('records.index');
+        $orders = Order::where('user_id', Auth::user()->id )->get();
+        return view('records.index', compact('orders'));
     }
 }

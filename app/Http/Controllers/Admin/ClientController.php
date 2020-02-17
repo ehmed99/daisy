@@ -40,7 +40,7 @@ class ClientController extends Controller
             'name' => 'required',
             'address' => 'required',
             'clientPh' => 'required',
-            'rate' => 'required'
+            // 'rate' => 'required'
             ]);
         $client = new Client;
         $client->name = $request->input('name');

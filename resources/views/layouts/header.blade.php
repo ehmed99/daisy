@@ -19,6 +19,12 @@
         <link href="{{ asset('/css/style.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('plugins/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
          
+        <style>
+            .fa-trash-alt{
+                background: transparent;
+                border: none;
+            }
+        </style>
 
     </head>
 

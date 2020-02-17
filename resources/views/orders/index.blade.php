@@ -105,9 +105,10 @@
                             <h4 class="mt-0 header-title">Customer Details</h4>
                             <form class="form-parsley" action="{{ route('order') }}" method="post">
                                 @csrf
+                                <input type="hidden" name="discount" id="dicount">
                                 <div class="form-group">
                                     <label for="address">Address</label>
-                                    <select class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" name="client">
+                                    <select class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" name="client" id="client">
                                         @foreach ($clients as $client)
                                         <option value="{{ $client->id }}"> {{ $client->name }} ( {{ $client->address }}
                                             ) </option>
@@ -167,9 +168,21 @@
     $(".select2").select2({
             width: '100%'
         });
-
+    $discount  = {!! json_encode($discountVoucher) !!}
+    
     $(document).on('change', "#qty", function(){
         $price = parseInt($("#qty").val()) * parseInt($("#product").val()) 
+        //checking the discount
+        let $product = $("#product").val();
+        let $client = $("#client").val();
+        $value = $discount.find(el => (el.product_id === $product && el.client_id === $client) )
+        if($value){
+            $price = $price - $value.discount
+            $("#dicount").val($value._id);
+        }
+        if($price < 0){
+            $price = 0;
+        }
         $(".price").val($price);
     })
 

@@ -28,8 +28,7 @@
                                     </thead>
 
                                     <tbody>
-                                        @if(is_array($discountVourchers ?? '')||is_object($discountVourchers ?? ''))
-                                        @foreach ($discountVourchers ?? '' ?? '' as $discountVourcher)
+                                        @foreach ($discountVourchers  as $discountVourcher)
                                     <tr>
                                         <td scope="row">{{ $loop->iteration }}</td>
                                         <td>{{ $discountVourcher->client->name }}<small class="badge badge-soft-pink ml-1">New</small></td>
@@ -44,7 +43,6 @@
                                             </form>
                                         </td> --}}
                                         @endforeach
-                                        @endif
                                     </tr><!--end tr-->                             
                                     </tbody>
                                 </table>                    

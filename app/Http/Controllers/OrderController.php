@@ -7,6 +7,8 @@ use App\Client;
 use App\Product;
 use App\Order;
 use Auth;
+use App\discountVoucher;
+
 
 class OrderController extends Controller
 {
@@ -17,9 +19,10 @@ class OrderController extends Controller
 
     public function order()
     {
+        $discountVoucher = discountVoucher::all();
         $clients = Client::all();
         $products = Product::all();
-        return view('orders.index', compact('clients', 'products'));
+        return view('orders.index', compact('clients', 'products', 'discountVoucher'));
     }
 
     public function submitOrder(Request $request)
@@ -31,12 +34,15 @@ class OrderController extends Controller
             'paid_amount' => $request->input('paid'),
             'total_bill' => $request->input('bill'),
             'quantity' => $request->input('qty'),
+            'discount_id' => $request->input('discount'),
         ];
         $order = Order::create($data);
-        if(!isset($order->client->balance)){
-            $order->client->balance = 0;
+        $client = Client::find($order->client_id);
+        if(!isset($client->balance)){
+            $client->balance = 0;
         }
-        $order->client->balance = $order->client->balance + ($order->total_bill - $order->paid_amount);
-        dd($order);
+        $client->balance = $client->balance + ($order->total_bill - $order->paid_amount);
+        $client->save();
+        return redirect()->back();
     }
 }

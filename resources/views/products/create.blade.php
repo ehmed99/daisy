@@ -36,12 +36,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="product">Product Name</label>
-                                        <select class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" id="product" name="product">
-                                            <option value="600ml">600ml</option>
-                                            <option value="1.5 ltr">1.5 ltr</option>
-                                            <option value="6 ltr">6 ltr</option>
-                                            <option value="19 ltr" selected="">19 ltr</option>
-                                        </select>
+                                        <input type="text" class="form-control" name="product">
                                     </div><!--end form-group-->
                                     <div class="form-group">
                                         <label for="img">Upload Image</label>

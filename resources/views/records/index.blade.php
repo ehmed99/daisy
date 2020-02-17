@@ -83,24 +83,24 @@
                                         <th>Address</th>
                                         <th>Order</th>                                                    
                                         <th>Date</th>
-                                        <th>Status</th>
+                                        <th>Paid</th>
                                         <th>Total</th>
+                                        <th>Discount</th>
                                     </tr><!--end tr-->
                                     </thead>
 
                                     <tbody>
-                                        @if(is_array($errors)||is_object($errors))
-                                        @foreach ($errors ?? '' as $order)
+                                        @foreach ($orders as $order)
                                         <tr>
                                             <td scope="row">{{ $loop->iteration }}</td>
                                             <td>{{ $order->client->name }}</td>
                                             <td>{{ $order->client->address }}</td>
                                             <td>{{ $order->quantity }}</td>
-                                            <td>{{ $order->date }}</td>
-                                            <td>{{ $order->status }}</td>
-                                            <td>{{ $order->bill }}</td>
+                                            <td>{{ $order->created_at }}</td>
+                                            <td>{{ $order->paid_amount }}</td>
+                                            <td>{{ $order->total_bill }}</td>
+                                            <td>{{ $order->discount ? $order->discount->discount : "No Discount" }}</td>
                                         @endforeach    
-                                        @endif
                                         </tr>  
                                                             
                                     </tbody>
